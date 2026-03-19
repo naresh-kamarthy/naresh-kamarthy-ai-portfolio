@@ -5,6 +5,8 @@ import WhatIBuildSection from "@/components/portfolio/WhatIBuildSection";
 import FeaturedProjectsSection, { FEATURED_SLUGS } from "@/components/portfolio/FeaturedProjectsSection";
 import OtherProjectsSection from "@/components/portfolio/OtherProjectsSection";
 import SkillsSection from "@/components/portfolio/SkillsSection";
+import ProfessionalExperienceSection from "@/components/portfolio/ProfessionalExperienceSection";
+import EducationSection from "@/components/portfolio/EducationSection";
 import GitHubSection from "@/components/portfolio/GitHubSection";
 import CareerDirectionSection from "@/components/portfolio/CareerDirectionSection";
 import ContactSection from "@/components/portfolio/ContactSection";
@@ -28,6 +30,8 @@ const Portfolio = () => {
       <FeaturedProjectsSection repos={aiRepos} />
       <OtherProjectsSection repos={otherAiRepos} />
       <SkillsSection />
+      <ProfessionalExperienceSection />
+      <EducationSection />
       <GitHubSection
         profile={profile}
         featuredCount={Math.min(FEATURED_SLUGS.length, 4)}

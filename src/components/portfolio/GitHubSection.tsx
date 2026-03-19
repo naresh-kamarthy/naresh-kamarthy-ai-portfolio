@@ -12,9 +12,9 @@ const GitHubSection = ({ featuredCount, otherCount }: Props) => {
   const totalAiRepos = featuredCount + otherCount;
 
   const stats = [
-    { icon: Code2, label: "Featured Projects", value: String(featuredCount) },
-    { icon: Sparkles, label: "Other Selected Projects", value: String(otherCount) },
-    { icon: Calendar, label: "AI Repos in Portfolio", value: `${totalAiRepos}` },
+    { icon: Code2, label: "Featured AI Systems", value: String(featuredCount) },
+    { icon: Sparkles, label: "Supporting AI Tools", value: String(otherCount) },
+    { icon: Calendar, label: "Production-Ready Repositories", value: `${totalAiRepos}` },
   ];
 
   return (

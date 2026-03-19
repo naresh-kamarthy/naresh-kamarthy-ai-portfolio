@@ -1,3 +1,4 @@
+import { motion, type Variants } from "framer-motion";
 import FadeIn from "./FadeIn";
 
 const groups = [
@@ -16,10 +17,12 @@ const groups = [
   {
     label: "AI Integration",
     items: [
-      "AI API Integration",
-      "Prompt-driven UI Systems",
-      "AI-assisted Interface Design",
-      "LLM-based Workflow Interfaces",
+      "AI Orchestration",
+      "Prompt Engineering",
+      "LLM Integration",
+      "AI System Design",
+      "RAG Implementation",
+      "AI API Optimization",
     ],
   },
   {
@@ -37,31 +40,62 @@ const groups = [
   },
 ];
 
+const container: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { 
+      duration: 0.4, 
+      ease: "easeOut" 
+    } 
+  },
+};
+
 const SkillsSection = () => (
   <section className="py-24 section-container">
     <FadeIn>
       <h2 className="text-2xl sm:text-3xl font-bold mb-3">Skills &amp; Tech Stack</h2>
-      <p className="text-muted-foreground text-sm sm:text-base mb-14">Technologies and patterns I work with daily</p>
+      <p className="text-muted-foreground text-sm sm:text-base mb-6">Technologies and systems I build with daily</p>
+      <p className="text-primary/90 text-sm font-medium mb-12 max-w-2xl leading-relaxed">
+        Focused on building AI-integrated frontend systems with emphasis on performance, scalability, and developer experience.
+      </p>
     </FadeIn>
-    <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {groups.map((group, gi) => (
-        <FadeIn key={group.label} delay={gi * 0.08}>
-          <div className="glass rounded-xl p-5 h-full">
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-100px" }}
+      className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
+    >
+      {groups.map((group) => (
+        <motion.div key={group.label} variants={item} className="h-full">
+          <div className="glass rounded-xl p-5 h-full border-primary/5 hover:border-primary/20 transition-colors">
             <h3 className="font-semibold text-foreground text-sm mb-4">{group.label}</h3>
             <div className="flex flex-wrap gap-2">
-              {group.items.map((item) => (
+              {group.items.map((skill) => (
                 <span
-                  key={item}
+                  key={skill}
                   className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary/80 font-mono border border-primary/10"
                 >
-                  {item}
+                  {skill}
                 </span>
               ))}
             </div>
           </div>
-        </FadeIn>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   </section>
 );
 
