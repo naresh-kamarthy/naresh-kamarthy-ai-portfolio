@@ -9,7 +9,7 @@ const EducationSection = () => (
           <h3 className="text-lg font-bold text-foreground">Master of Science (Computer Science)</h3>
           <span className="text-muted-foreground font-mono text-sm">2015 - 2017</span>
         </div>
-        <div className="text-primary/90 font-medium mt-1">Rayalaseema University</div>
+        <div className="text-primary/90 font-medium mt-1">Rayalaseema University - 85%</div>
       </div>
     </FadeIn>
   </section>

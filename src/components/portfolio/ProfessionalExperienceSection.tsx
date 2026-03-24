@@ -10,21 +10,19 @@ const ProfessionalExperienceSection = () => (
         <div className="relative pl-8 border-l-2 border-primary/20 hover:border-primary/40 transition-colors">
           <div className="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-0 shadow-[0_0_12px_hsl(var(--primary)/0.5)]" />
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-            <h3 className="text-xl font-bold text-foreground">Frontend Engineer</h3>
-            <span className="text-muted-foreground font-mono text-sm px-3 py-1 rounded-full bg-muted/50">Jan 2022 – Feb 2025</span>
+            <h3 className="text-xl font-bold text-foreground tracking-tight uppercase">Senior Software Engineer</h3>
+            <span className="text-muted-foreground font-mono text-xs px-3 py-1 rounded-full bg-muted/50 uppercase border border-border/50">
+              Jan 2022 – Feb 2025
+            </span>
           </div>
-          <div className="text-primary font-semibold text-lg mb-4">Navajna Technologies Pvt Ltd</div>
-          
+          <div className="text-primary font-bold text-lg mb-4">Navajna Technologies Pvt Ltd</div>
+
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-foreground">Project:</span>
-              <span className="text-foreground font-medium">MasterCard</span>
-            </div>
             <ul className="space-y-3 text-muted-foreground text-sm sm:text-base list-disc pl-5">
-              <li>Built scalable React.js and TypeScript UI systems used across multiple enterprise modules</li>
-              <li>Reduced unnecessary re-renders and improved performance through optimized component architecture</li>
-              <li>Increased code reliability by implementing unit testing using Jest</li>
-              <li>Maintained high code quality through reviews and best practices</li>
+              <li><span className="text-foreground font-semibold">MasterCard:</span>  Built reusable React components for global fintech products and maintained 90%+ test coverage using Jest, React Testing Library and SonarQube.</li>
+              <li><span className="text-foreground font-semibold">Pixofix:</span> Engineered an image transformation platform with multi-role access control and integrated RESTful APIs.</li>
+              <li><span className="text-foreground font-semibold">BoxFit:</span> Implemented real-time video call functionality using Jitsi Meet Web SDK for live fitness training sessions.</li>
+              <li>Lead cross-functional teams to deliver scalable frontend architectures for enterprise-grade applications.</li>
             </ul>
           </div>
         </div>
@@ -33,21 +31,19 @@ const ProfessionalExperienceSection = () => (
         <div className="relative pl-8 border-l-2 border-primary/20 hover:border-primary/40 transition-colors">
           <div className="absolute w-4 h-4 bg-primary/60 rounded-full -left-[9px] top-0" />
           <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
-            <h3 className="text-xl font-bold text-foreground">Software Engineer</h3>
-            <span className="text-muted-foreground font-mono text-sm px-3 py-1 rounded-full bg-muted/50">Jun 2019 – Dec 2021</span>
+            <h3 className="text-xl font-bold text-foreground tracking-tight uppercase">SOFTWARE ENGINEER</h3>
+            <span className="text-muted-foreground font-mono text-xs px-3 py-1 rounded-full bg-muted/50 uppercase border border-border/50">
+              Jun 2019 – Dec 2021
+            </span>
           </div>
-          <div className="text-primary font-semibold text-lg mb-4">Vectramind Technologies Pvt Ltd</div>
-          
+          <div className="text-primary font-bold text-lg mb-4">Vectramind Technologies Pvt Ltd</div>
+
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-foreground">Project:</span>
-              <span className="text-foreground font-medium">Firstpass</span>
-            </div>
             <ul className="space-y-3 text-muted-foreground text-sm sm:text-base list-disc pl-5">
-              <li>Built healthcare platform UI for patient check-in and scheduling workflows</li>
-              <li>Built responsive dashboards handling dynamic real-time data</li>
-              <li>Integrated REST APIs and improved data rendering efficiency</li>
-              <li>Collaborated across teams to deliver stable production features</li>
+              <li><span className="text-foreground font-semibold">Firstpass:</span> Developed contact-less check-in kiosks for healthcare systems using React and TypeScript, optimizing for low-latency touch response.</li>
+              <li><span className="text-foreground font-semibold">Synapse:</span> Built a comprehensive Angular-based platform for high-volume SMS/Email campaign orchestration.</li>
+              <li>Optimized RESTful API integrations and state management patterns to ensure high performance across diverse hardware platforms.</li>
+              <li>Designed and implemented responsive UI systems for enterprise SaaS products with a focus on accessibility and performance.</li>
             </ul>
           </div>
         </div>
