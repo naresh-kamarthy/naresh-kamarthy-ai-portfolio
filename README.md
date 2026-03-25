@@ -2,9 +2,8 @@
 
 > Frontend Engineer with 5+ years designing scalable architectures and building AI-powered product interfaces.
 
-[![GitHub Status](https://img.shields.io/github/license/naresh-kamarthy/naresh-kamarthy-ai-portfolio)](https://github.com/naresh-kamarthy/naresh-kamarthy-ai-portfolio/blob/main/LICENSE)
-[![Commit Activity](https://img.shields.io/github/last-commit/naresh-kamarthy/naresh-kamarthy-ai-portfolio.git)](https://github.com/naresh-kamarthy/naresh-kamarthy-ai-portfolio.git)
 [![Tech Stack](https://img.shields.io/badge/Stack-React_|_TypeScript_|_Tailwind-blue)](https://github.com/naresh-kamarthy/naresh-kamarthy-ai-portfolio.git)
+[![GitHub Status](https://img.shields.io/github/license/naresh-kamarthy/naresh-kamarthy-ai-portfolio)](https://github.com/naresh-kamarthy/naresh-kamarthy-ai-portfolio/blob/main/LICENSE)
 
 ---
 

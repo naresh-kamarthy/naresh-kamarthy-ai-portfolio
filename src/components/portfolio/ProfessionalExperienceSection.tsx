@@ -19,10 +19,10 @@ const ProfessionalExperienceSection = () => (
 
           <div className="space-y-4">
             <ul className="space-y-3 text-muted-foreground text-sm sm:text-base list-disc pl-5">
-              <li><span className="text-foreground font-semibold">MasterCard:</span>  Built reusable React components for global fintech products and maintained 90%+ test coverage using Jest, React Testing Library and SonarQube.</li>
-              <li><span className="text-foreground font-semibold">Pixofix:</span> Engineered an image transformation platform with multi-role access control and integrated RESTful APIs.</li>
-              <li><span className="text-foreground font-semibold">BoxFit:</span> Implemented real-time video call functionality using Jitsi Meet Web SDK for live fitness training sessions.</li>
-              <li>Lead cross-functional teams to deliver scalable frontend architectures for enterprise-grade applications.</li>
+              <li><span className="text-foreground font-semibold">MasterCard (Client):</span>  Built reusable React components for global enterprise fintech products and maintained 90%+ test coverage using Jest, React Testing Library and SonarQube.</li>
+              <li><span className="text-foreground font-semibold">Pixofix :</span> Engineered an image transformation platform with multi-role access control and integrated RESTful APIs.</li>
+              <li><span className="text-foreground font-semibold">BoxFit :</span> Implemented real-time video call functionality using Jitsi Meet Web SDK for live fitness training sessions.</li>
+              <li>Collaborated with cross-functional teams to deliver scalable frontend architectures for enterprise-grade applications.</li>
             </ul>
           </div>
         </div>
