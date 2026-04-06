@@ -1,4 +1,5 @@
 import { Briefcase, Bot, ShieldCheck } from "lucide-react";
+import { motion } from "framer-motion";
 import FadeIn from "./FadeIn";
 
 const highlights = [
@@ -21,23 +22,37 @@ const highlights = [
 
 const WhatIBuildSection = () => (
   <section className="py-24 section-container">
-    <FadeIn>
+    <FadeIn direction="up">
       <h2 className="text-2xl sm:text-3xl font-bold mb-3">What I Build</h2>
       <p className="text-muted-foreground text-sm sm:text-base max-w-2xl leading-relaxed mb-14">
         I build intelligent frontend systems at the intersection of React engineering, AI workflows, and developer tooling — with a focus on usable interfaces, reliable architecture, and production-ready experiences.
       </p>
     </FadeIn>
-    <div className="grid gap-5 sm:grid-cols-3">
-      {highlights.map((h, i) => (
-        <FadeIn key={h.title} delay={i * 0.1}>
-          <div className="glass rounded-xl p-6 card-hover h-full">
-            <h.icon className="w-6 h-6 text-primary mb-4" />
-            <h3 className="font-semibold text-foreground mb-2">{h.title}</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">{h.text}</p>
+    <FadeIn stagger direction="up" distance={30} className="grid gap-6 sm:grid-cols-3">
+      {highlights.map((h) => (
+        <motion.div
+          key={h.title}
+          variants={{
+            hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
+            visible: { opacity: 1, y: 0, filter: "blur(0px)" }
+          }}
+          whileHover={{ y: -10, scale: 1.02, transition: { type: "spring", stiffness: 300, damping: 15 } }}
+          className="glass-premium rounded-2xl p-8 card-hover h-full relative group overflow-hidden border border-white/5"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="relative z-10">
+            <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <h.icon className="w-6 h-6 text-primary" />
+            </div>
+            <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{h.title}</h3>
+            <p className="text-muted-foreground leading-relaxed font-medium">{h.text}</p>
           </div>
-        </FadeIn>
+          
+          {/* Subtle bottom glow */}
+          <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+        </motion.div>
       ))}
-    </div>
+    </FadeIn>
   </section>
 );
 

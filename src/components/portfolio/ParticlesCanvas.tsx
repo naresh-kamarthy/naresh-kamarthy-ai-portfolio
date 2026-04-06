@@ -11,7 +11,15 @@ const ParticlesCanvas = () => {
 
     let animationId: number;
     const particles: { x: number; y: number; vx: number; vy: number; size: number; opacity: number }[] = [];
-    const count = 45;
+    const count = 60;
+    let mouse = { x: 0, y: 0, active: false };
+
+    const handleMouseMove = (e: MouseEvent) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    };
+    window.addEventListener("mousemove", handleMouseMove);
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -24,10 +32,10 @@ const ParticlesCanvas = () => {
       particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.2,
-        vy: (Math.random() - 0.5) * 0.2,
-        size: Math.random() * 1.5 + 0.5,
-        opacity: Math.random() * 0.35 + 0.05,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.4 + 0.1,
       });
     }
 
@@ -36,13 +44,26 @@ const ParticlesCanvas = () => {
       particles.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
+
+        // Mouse proximity interaction
+        if (mouse.active) {
+          const dx = mouse.x - p.x;
+          const dy = mouse.y - p.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 150) {
+            p.x -= dx * 0.01;
+            p.y -= dy * 0.01;
+          }
+        }
+
         if (p.x < 0) p.x = canvas.width;
         if (p.x > canvas.width) p.x = 0;
         if (p.y < 0) p.y = canvas.height;
         if (p.y > canvas.height) p.y = 0;
+        
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(120, 150, 255, ${p.opacity})`;
+        ctx.fillStyle = `rgba(139, 92, 246, ${p.opacity})`; // Using violet-500
         ctx.fill();
       });
 
@@ -51,11 +72,12 @@ const ParticlesCanvas = () => {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 140) {
+          if (dist < 160) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(120, 150, 255, ${0.04 * (1 - dist / 140)})`;
+            ctx.lineWidth = (1 - dist / 160) * 0.8;
+            ctx.strokeStyle = `rgba(139, 92, 246, ${0.08 * (1 - dist / 160)})`;
             ctx.stroke();
           }
         }
@@ -67,6 +89,7 @@ const ParticlesCanvas = () => {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 

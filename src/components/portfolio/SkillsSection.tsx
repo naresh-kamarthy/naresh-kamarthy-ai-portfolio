@@ -50,15 +50,27 @@ const container: Variants = {
   },
 };
 
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
+const itemVariant: Variants = {
+  hidden: { opacity: 0, y: 15 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { 
-      duration: 0.4, 
-      ease: "easeOut" 
-    } 
+    transition: {
+      duration: 0.5,
+      ease: [0.21, 0.47, 0.32, 0.98]
+    }
+  },
+};
+
+const chipVariant: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut"
+    }
   },
 };
 
@@ -79,19 +91,26 @@ const SkillsSection = () => (
       className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
     >
       {groups.map((group) => (
-        <motion.div key={group.label} variants={item} className="h-full">
-          <div className="glass rounded-xl p-5 h-full border-primary/5 hover:border-primary/20 transition-colors">
-            <h3 className="font-semibold text-foreground text-sm mb-4">{group.label}</h3>
-            <div className="flex flex-wrap gap-2">
+        <motion.div key={group.label} variants={itemVariant} className="group">
+          <div className="glass rounded-2xl p-6 h-full border-primary/5 hover:border-primary/20 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5">
+            <h3 className="font-bold text-foreground text-sm mb-5 group-hover:text-primary transition-colors">{group.label}</h3>
+            <motion.div
+              className="flex flex-wrap gap-2"
+              variants={{
+                show: { transition: { staggerChildren: 0.05 } }
+              }}
+            >
               {group.items.map((skill) => (
-                <span
+                <motion.span
                   key={skill}
-                  className="text-xs px-3 py-1.5 rounded-full bg-primary/8 text-primary/80 font-mono border border-primary/10"
+                  variants={chipVariant}
+                  whileHover={{ scale: 1.05, backgroundColor: "hsl(var(--primary) / 0.12)" }}
+                  className="text-xs px-3 py-1.5 rounded-lg bg-primary/5 text-primary/90 font-mono border border-primary/10 transition-colors cursor-default"
                 >
                   {skill}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       ))}
